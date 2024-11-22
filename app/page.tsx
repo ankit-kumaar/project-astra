@@ -9,8 +9,12 @@ export default function HomePage() {
   const router = useRouter();
 
   useEffect(() => {
-    if (isLoaded && !userId) {
-      router.push("/sign-in"); // Redirect to /sign-in for unauthenticated users
+    if (isLoaded) {
+      if (!userId) {
+        router.push("/sign-in");
+      } else {
+        router.push("/tasking");
+      }
     }
   }, [isLoaded, userId, router]);
 
