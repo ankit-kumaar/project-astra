@@ -4,7 +4,7 @@ import axios from "axios";
 const startUpload = async (file) => {
   try {
     const response = await axios.post(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/start-upload/`,
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/media/start-upload/`,
       {
         file_name: file.name,
       }
@@ -23,7 +23,7 @@ const startUpload = async (file) => {
 const getPresignedUrl = async (uploadId, partNumber, fileName) => {
   try {
     const response = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/presigned-url/${uploadId}/${partNumber}`,
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/media/presigned-url/${uploadId}/${partNumber}`,
       { params: { file_name: fileName } }
     );
     return response.data.presigned_url;
@@ -61,7 +61,7 @@ const completeUpload = async (uploadId, fileName, partsInfo) => {
 
   try {
     const response = await axios.post(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/complete-upload/`,
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/media/complete-upload/`,
       {
         upload_id: uploadId,
         file_name: fileName,
