@@ -346,7 +346,7 @@ export default function Component() {
       </nav> */}
 
       {/* Bottom Navigation */}
-      <nav className="fixed bottom-0 grid grid-cols-4 w-full gap-2 p-2 bg-white border-t">
+      {/* <nav className="fixed bottom-0 grid grid-cols-4 w-full gap-2 p-2 bg-white border-t">
         <Link href="/">
           <Button variant="ghost" className="flex flex-col items-center gap-1">
             <Home className="h-5 w-5" />
@@ -371,7 +371,7 @@ export default function Component() {
             <span className="text-xs">Tasking</span>
           </Button>
         </Link>
-      </nav>
+      </nav> */}
     </div>
   );
 }
